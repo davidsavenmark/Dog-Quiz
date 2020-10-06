@@ -76,8 +76,7 @@
                     android:background="@color/colorPrimary"
                     android:text="Start"
                     android:textSize="18sp"
-                    android:textColor="@android:color/white"
-                    >
+                    android:textColor="@android:color/white">
 
                 </Button>
 
