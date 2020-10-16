@@ -1,4 +1,4 @@
-package com.example.quizapp4
+package com.example.dogexpertz
 
 data class Question (
     val id: Int,

@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="image"
-        android:src="@drawable/ic_trophy"/>
+        android:src="@drawable/ic_dog_result_picture"/>
 
     <TextView
         android:id="@+id/tv_congratulations"

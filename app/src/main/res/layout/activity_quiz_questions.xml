@@ -22,13 +22,13 @@
             android:gravity="center"
             android:textColor="#363A43"
             android:textSize="22sp"
-            android:text="What country does this flag belong to?"/>
+            android:text="What is the name of this dog breed?"/>
         <ImageView
             android:id="@+id/iv_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:src="@drawable/ic_flag_of_argentina"/>
+            android:src="@drawable/ic_english_bulldog"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
                 android:padding="15dp"
                 android:textColor="#7A8089"
                 android:textSize="18sp"
-                tools:text="Argentina"/>
+                tools:text="English Bulldog"/>
 
         <TextView
             android:id="@+id/tv_option_two"
@@ -86,7 +86,7 @@
             android:padding="15dp"
             android:textColor="#7A8089"
             android:textSize="18sp"
-            tools:text="Australia"/>
+            tools:text="Chihuahua"/>
 
         <TextView
             android:id="@+id/tv_option_three"
@@ -101,7 +101,7 @@
             android:padding="15dp"
             android:textColor="#7A8089"
             android:textSize="18sp"
-            tools:text="Armenia"/>
+            tools:text="Boxer"/>
 
         <TextView
             android:id="@+id/tv_option_four"
@@ -116,7 +116,7 @@
             android:padding="15dp"
             android:textColor="#7A8089"
             android:textSize="18sp"
-            tools:text="Austria"/>
+            tools:text="English Mastiff"/>
 
         <Button
             android:id="@+id/btn_submit"
@@ -128,7 +128,7 @@
             android:textColor="@android:color/white"
             android:textSize="18sp"
             android:textStyle="bold"
-            />
+             />
     </LinearLayout>
 
 

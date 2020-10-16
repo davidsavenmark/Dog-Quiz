@@ -1,16 +1,14 @@
-package com.example.quizapp4
+package com.example.dogexpertz
 
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.TextView
-import android.widget.Toast
 import androidx.core.content.ContextCompat
-import com.example.quizapp4.R.*
+import com.example.dogexpertz.R.*
 import kotlinx.android.synthetic.main.activity_quiz_questions.*
 
 class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {

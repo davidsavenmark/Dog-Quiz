@@ -1,4 +1,4 @@
-package com.example.quizapp4
+package com.example.dogexpertz
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
