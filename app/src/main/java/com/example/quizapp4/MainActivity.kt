@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         btn_start.setOnClickListener {
             if(et_name.text.toString().isEmpty()){
                 Toast.makeText(this,
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
             }else{
                 val intent = Intent(this,QuizQuestionsActivity::class.java)
+                intent.putExtra(Constants.USER_NAME,et_name.text.toString())
                 startActivity(intent)
                 finish()
 
