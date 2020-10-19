@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_quiz_questions.*
 class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
     private var mCurrentPosition: Int = 1
-    private var mQuestionList: ArrayList<Question>? = null
+    private var mQuestionsList: ArrayList<Question>? = null
     private var mSelectedOptionPosition : Int = 0
     private var mCorrectAnswers: Int = 0
     private var mUserName: String? = null
@@ -25,8 +25,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
         mUserName = intent.getStringExtra(Constants.USER_NAME)
 
-        val questionList = Constants.getQuestions()
-        mQuestionList = Constants.getQuestions()
+        mQuestionsList = Constants.getQuestions()
 
         setQuestion()
 
@@ -35,15 +34,18 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         tv_option_three.setOnClickListener(this)
         tv_option_four.setOnClickListener(this)
         btn_submit.setOnClickListener(this)
+
+        mCurrentPosition = 1
+        val question: Question? = mQuestionsList!![mCurrentPosition-1]
     }
 
     private fun setQuestion(){
 
-        val question = mQuestionList!![mCurrentPosition -1]
+        val question = mQuestionsList!![mCurrentPosition -1]
 
         defaultOptionsView()
 
-        if(mCurrentPosition == mQuestionList!!.size){
+        if(mCurrentPosition == mQuestionsList!!.size){
             btn_submit.text = "FINISH"
         }else{
             btn_submit.text = " SUBMIT"
@@ -79,47 +81,47 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
 
         when(v?.id){
-            id.tv_option_one ->{
+            R.id.tv_option_one ->{
                 selectedOptionView(tv_option_one,1)
 
             }
-            id.tv_option_two->{
+            R.id.tv_option_two->{
                 selectedOptionView(tv_option_two,2)
             }
-            id.tv_option_three->{
+            R.id.tv_option_three->{
                 selectedOptionView(tv_option_three,3)
             }
-            id.tv_option_four->{
+            R.id.tv_option_four->{
                 selectedOptionView(tv_option_four,4)
             }
-            id.btn_submit ->{
+            R.id.btn_submit ->{
                 if(mSelectedOptionPosition == 0){
                     mCurrentPosition ++
 
                     when{
-                        mCurrentPosition <= mQuestionList!!.size ->{
+                        mCurrentPosition <= mQuestionsList!!.size ->{
                             setQuestion()
                         }else ->{
                             val intent = Intent(this, ResultActivity::class.java)
                             intent.putExtra(Constants.USER_NAME, mUserName)
                             intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswers)
-                            intent.putExtra(Constants.TOTAL_QUESTIONS, mQuestionList!!.size)
+                            intent.putExtra(Constants.TOTAL_QUESTIONS, mQuestionsList!!.size)
                             startActivity(intent)
                             finish()
 
                         }
                     }
                 }else{
-                    val question = mQuestionList?.get(mCurrentPosition -1)
-                    if (question!!.correctAnswer !=mCurrentPosition){
+                    val question = mQuestionsList?.get(mCurrentPosition -1)
+                    if (question!!.correctAnswer !=mSelectedOptionPosition){
                         answerView(mSelectedOptionPosition, R.drawable.wrong_option_border_bg)
                     }else{
                         mCorrectAnswers++
                     }
                     answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
 
-                    if(mCurrentPosition == mQuestionList!!.size){
-                        btn_submit.text = "FINISH"
+                    if(mCurrentPosition == mQuestionsList!!.size){
+                        btn_submit.text = "FINISHED"
 
                     }else{
                         btn_submit.text = "Go to next question"
@@ -150,7 +152,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
             }
             4 ->{
-                tv_option_two.background = ContextCompat.getDrawable(
+                tv_option_four.background = ContextCompat.getDrawable(
                     this, drawableView)
 
             }
@@ -167,6 +169,6 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         tv.setTextColor(Color.parseColor("#363A43"))
         tv.setTypeface(tv.typeface, Typeface.BOLD)
         tv.background = ContextCompat.getDrawable(this,
-            drawable.selected_option_border_bg)
+            R.drawable.selected_option_border_bg)
     }
 }

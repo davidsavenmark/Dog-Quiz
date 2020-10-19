@@ -8,115 +8,113 @@ object Constants{
     const val TOTAL_QUESTIONS: String = "total_questions"
     const val CORRECT_ANSWERS: String = "correct_answers"
 
-
-
     fun getQuestions(): ArrayList<Question>{
-        val questionList = ArrayList<Question>()
+        val questionsList = ArrayList<Question>()
         // Question 1
         val que1 = Question(
-            1,
+            0,
             "What is the name of this dog breed?",
             R.drawable.ic_english_bulldog,
-             "English Bulldog",
              "Chihuahua",
+             "English Bulldog",
              "Boxer",
              "Mastiff",
-            1
+            2
         )
 
-        questionList.add(que1)
+        questionsList.add(que1)
 
         // Question 2
         val que2 = Question(
-            2, "What is the name of this dog breed?",
+            1, "What is the name of this dog breed?",
             R.drawable.ic_american_akita,
             "Bichon frisé", "Japaneese shiba",
             "American akita", "Siberian husky", 3
         )
 
-        questionList.add(que2)
+        questionsList.add(que2)
 
         // Question 3
         val que3 = Question(
-            3, "What is the name of this dog breed?",
+            2, "What is the name of this dog breed?",
             R.drawable.ic_border_collie,
             "Jack russell", "Border collie",
             "Shetland sheepdog", "Whippet", 2
         )
 
-        questionList.add(que3)
+        questionsList.add(que3)
 
         // Question 4
         val que4 = Question(
-            4, "What is the name of this dog breed?",
+            3, "What is the name of this dog breed?",
             R.drawable.ic_cane_corso,
             "Pitbull terrier", "Cane corso",
             "Bullmastiff", "Amstaff", 2
         )
 
-        questionList.add(que4)
+        questionsList.add(que4)
 
         // Question 5
         val que5 = Question(
-            5, "What is the name of this dog breed?",
+            4, "What is the name of this dog breed?",
             R.drawable.ic_german_shepherd,
             "Australian shepherd", "Rottweiler",
             "German shepherd", "Collie", 3
         )
 
-        questionList.add(que5)
+        questionsList.add(que5)
 
         // Question 6
         val que6 = Question(
-            6, "What is the name of this dog breed?",
+            5, "What is the name of this dog breed?",
             R.drawable.ic_french_bulldog,
             "French bulldog", "Mallinois",
             "Boston terrier", "Staffordshire bullterrier", 1
         )
 
-        questionList.add(que6)
+        questionsList.add(que6)
 
         // Question 7
         val que7 = Question(
-            7, "What is the name of this dog breed?",
+            6, "What is the name of this dog breed?",
             R.drawable.ic_tervuren,
             "Malteser", "Weimaraner",
             "Tervuren", "Golden retriever", 3
         )
 
-        questionList.add(que7)
+        questionsList.add(que7)
 
         // Question 8
         val que8 = Question(
-            8, "What is the name of this dog breed?",
+            7, "What is the name of this dog breed?",
             R.drawable.ic_shih_tzu,
             "Lhasa apso", "Shih-Tzu",
             "Pekingeese", "Pomeranian", 2
         )
 
-        questionList.add(que8)
+        questionsList.add(que8)
 
         // Question 9
         val que9 = Question(
-            9, "What is the name of this dog breed?",
+            8, "What is the name of this dog breed?",
             R.drawable.ic_rhodesian_ridgeback,
             "Springer spaniel", "Rhodesian ridgeback",
             "Dogo argentino", "Gran danois", 2
         )
 
-        questionList.add(que9)
+        questionsList.add(que9)
 
         // Question 10
         val que10 = Question(
-            10, "What is the name of this dog breed?",
+            9, "What is the name of this dog breed?",
             R.drawable.ic_labrador,
             "Labrador", "Basenji",
             "Flat coated retriever", "Schnauzer", 1
         )
 
-        questionList.add(que10)
+        questionsList.add(que10)
 
-        return questionList
+        return questionsList
 
     }
 }

@@ -55,7 +55,7 @@
         android:layout_marginTop="10dp"
         android:textColor="@android:color/secondary_text_dark"
         android:textSize="20sp"
-        tools:text="Your score is 9 out of 10" />
+        tools:text="Your score is" />
     <Button
         android:id="@+id/btn_finish"
         android:layout_width="match_parent"

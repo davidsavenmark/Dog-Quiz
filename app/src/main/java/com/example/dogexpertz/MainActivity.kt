@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        btn_start.setOnClickListener {
+        btn_start.setOnClickListener () {
             if(et_name.text.toString().isEmpty()){
                 Toast.makeText(this,
                     "Please enter your name", Toast.LENGTH_SHORT).show()
