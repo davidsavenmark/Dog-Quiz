@@ -1,5 +1,6 @@
 package com.example.dogexpertz
 
+// Question class med alla nödvändiga konstanta variabler
 data class Question (
     val id: Int,
     val question: String,
