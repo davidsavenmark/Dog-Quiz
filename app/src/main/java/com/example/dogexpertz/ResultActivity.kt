@@ -7,17 +7,17 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_result.*
 
 class ResultActivity : AppCompatActivity() {
+
+    //Denna funktion skapas automatiskt av Android när Class QuizQuestionsActivity är skapad.
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_result)
 
-
-        //STEG 6: Gömmer status bar och hämtar data från intent och sätter den
-        // till UI. Lägger också till click event till finish button.
+        //STEG 6: Hämtar data från intent och lägger in den i UI.
+        // Lägger också till click event till finish button.
 
         // START
-        // Gömmer status bar.
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN // Gömmer status bar.
 
         val username = intent.getStringExtra(Constants.USER_NAME)
         tv_name.text = username

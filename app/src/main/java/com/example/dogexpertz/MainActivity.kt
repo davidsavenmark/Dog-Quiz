@@ -9,31 +9,31 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-
-
     //Denna funktion skapas automatiskt av Android när Class MainActivity är skapad.
     override fun onCreate(savedInstanceState: Bundle?) {
-
-        // Gömmer status bar.
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN // Gömmer status bar.
 
         // Kallar på parent constructorn
         super.onCreate(savedInstanceState)
         // Justerar xml viewn till denna class
         setContentView(R.layout.activity_main)
 
-        // Villkor för när man trycker på start knappen: Om namnfältet står tomt så ska
-        // " Please enter your name " stå kvar när man trycker på knappen.
-        // Annars ska den hoppa in i nästa aktivitet
+        // Villkor för start knappen:
+        //
+        // Om namnfältet står tomt och man trycker på start så kommer
+        // dyker det upp en påminnelse längre ner vid skärmen  " Please enter your name "
+
+        // Om namnfältet har text i sig och man trycker på start så kommer man vidare till nästa
+        // aktivitet.
         btn_start.setOnClickListener () {
             if(et_name.text.toString().isEmpty()){
                 Toast.makeText(this,
                     "Please enter your name", Toast.LENGTH_SHORT).show()
-
             }else{
                 val intent = Intent(this,QuizQuestionsActivity::class.java)
+
                 // STEG 2: Passerar namnet via intent där man använder en constant variabel som
-                // har skapats.
+                // finns i Constants.
                 // START
                 intent.putExtra(Constants.USER_NAME,et_name.text.toString())
                 // END

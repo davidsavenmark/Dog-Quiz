@@ -14,21 +14,20 @@ import kotlinx.android.synthetic.main.activity_quiz_questions.*
 class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
     private var mCurrentPosition: Int = 1 // Default värde för frågepositionen.
-    private var mQuestionsList: ArrayList<Question>? = null
+    private var mQuestionsList: ArrayList<Question>? = null // Default värde för storleken på
+                                                            // frågelistan
     private var mSelectedOptionPosition : Int = 0
     private var mCorrectAnswers: Int = 0
 
 
-    // (STEG 3: Skapa en variabel för att hämta namnet från intent.
+    // (STEG 3: Skapar en variabel för att hämta namnet från intent.
     // START
     private var mUserName: String? = null
     //END
 
     //Denna funktion skapas automatiskt av Android när Class QuizQuestionsActivity är skapad.
     override fun onCreate(savedInstanceState: Bundle?) {
-
-        // Gömmer status bar.
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN // Gömmer status bar.
 
         // Kallar på parent constructorn
         super.onCreate(savedInstanceState)
@@ -41,9 +40,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         mUserName = intent.getStringExtra(Constants.USER_NAME)
         // END
 
-
-
-        // Läser in constanten getQuestions som sen läser in frågeposition 1 och dom fyra
+        // Hämtar in funktionen getQuestions som sen läser in frågan och dom fyra
         // svars-alternativen 
         mQuestionsList = Constants.getQuestions()
 
@@ -156,7 +153,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                         btn_submit.text = "FINISHED"
 
                     }else{
-                        btn_submit.text = "Go to next question"
+                        btn_submit.text = "Next Question"
 
                     }
                     mSelectedOptionPosition = 0
@@ -165,7 +162,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         }
 
     }
-    // Funktion för answerview som används till att visa om svaret rätt eller fel.
+    // Funktion för answerview som används till att visa om svaret är fel eller rätt.
     private fun answerView(answer: Int, drawableView: Int){
         when (answer){
             1 ->{
