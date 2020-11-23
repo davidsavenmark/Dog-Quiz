@@ -7,6 +7,9 @@ import android.view.View
 import android.widget.Toast
 import androidx.room.Room
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,6 +26,33 @@ class MainActivity : AppCompatActivity() {
         db = Room.databaseBuilder(applicationContext, QuizDataBase::class.java, "quiz-question")
             .fallbackToDestructiveMigration()
             .build()
+
+        val question = Question(
+            1, "What is the name of this dog breed?", R.drawable.ic_english_bulldog,
+            "Chihuahua",
+            "English Bulldog",
+            "Boxer",
+            "Mastiff",
+            2)
+
+        val question = Question(2, "What is the name of this dog breed?",
+        R.drawable.ic_american_akita,
+        "Bichon frisé", "Japaneese shiba",
+        "American akita", "Siberian husky",)
+
+        saveQuestion(question)
+
+
+        }
+        fun saveQuestion (question: Question){
+            GlobalScope.launch(Dispatchers.IO){
+                db.questionDao().insert(question)
+
+        }
+
+
+
+
 
 
 
