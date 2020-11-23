@@ -23,29 +23,12 @@ interface QuestionDao {
     fun delete (question: Question)
 
 
-    @Query("SELECT * FROM item")
+    @Query("SELECT * FROM question")
     fun getAll() : List<Question>
 
 
-    //@Query("SELECT * FROM item WHERE TOTAL_QUESTIONS LIKE :categoryName")
-    //fun showCorrectAnswers(categoryName: String) : List <Question>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @Query("SELECT * FROM Question WHERE question LIKE :questionName")
+    fun findByQuestion(questionName: String) : List <Question>
 
 
 }
