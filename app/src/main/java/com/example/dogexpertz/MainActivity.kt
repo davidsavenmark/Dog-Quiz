@@ -29,16 +29,15 @@ class MainActivity : AppCompatActivity() {
 
         val question = Question(
             1, "What is the name of this dog breed?", R.drawable.ic_english_bulldog,
-            "Chihuahua",
-            "English Bulldog",
-            "Boxer",
-            "Mastiff",
+            "Chihuahua", "English Bulldog",
+            "Boxer", "Mastiff",
             2)
 
-        val question = Question(2, "What is the name of this dog breed?",
-        R.drawable.ic_american_akita,
-        "Bichon frisé", "Japaneese shiba",
-        "American akita", "Siberian husky",)
+        val question = Question(
+            2, "What is the name of this dog breed?",
+             R.drawable.ic_american_akita,
+            "Bichon frisé", "Japaneese shiba",
+            "American akita", "Siberian husky",3)
 
         saveQuestion(question)
 
