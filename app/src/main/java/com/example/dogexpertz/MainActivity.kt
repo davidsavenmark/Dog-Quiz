@@ -27,44 +27,31 @@ class MainActivity : AppCompatActivity() {
             .fallbackToDestructiveMigration()
             .build()
 
-        val question1 = Question(
-            1, "What is the name of this dog breed?",
+        val question1 = Question("What is the name of this dog breed?",
              R.drawable.ic_english_bulldog,
             "Chihuahua", "English Bulldog",
             "Boxer", "Mastiff",
             2)
 
-        val question2 = Question(
-            2, "What is the name of this dog breed?",
+        val question2 = Question("What is the name of this dog breed?",
              R.drawable.ic_american_akita,
             "Bichon frisé", "Japaneese shiba",
             "American akita", "Siberian husky",3)
 
-        val question3 = Question (
-            3, "What is the name of this dog breed?",
+        val question3 = Question ("What is the name of this dog breed?",
             R.drawable.ic_border_collie,
             "Jack russell", "Border collie",
             "Shetland sheepdog", "Whippet", 2)
-
 
         saveQuestion(question1)
         saveQuestion(question2)
         saveQuestion(question3)
 
-
         }
         fun saveQuestion (question: Question){
             GlobalScope.launch(Dispatchers.IO){
                 db.questionDao().insert(question)
-
         }
-
-
-
-
-
-
-
 
         // Start-Knapp
         // Om namnfältet står tomt och man trycker på start så
@@ -88,10 +75,6 @@ class MainActivity : AppCompatActivity() {
                 finish()
 
             }
-
-
         }
-
-
     }
 }

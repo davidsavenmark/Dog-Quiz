@@ -9,11 +9,21 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Question(
-    @PrimaryKey(autoGenerate = true) var id: Int,
-    @ColumnInfo(name = "question")val question: String,
-    @ColumnInfo(name = "image")val image: Int,
-    @ColumnInfo(name = "optionOne")val optionOne: String,
-    @ColumnInfo(name = "optionTwo")val optionTwo: String,
-    @ColumnInfo(name = "optionThree")val optionThree: String,
-    @ColumnInfo(name = "OptionFour")val optionFour: String,
-    @ColumnInfo(name = "correctAnswer")val correctAnswer: Int,)
+    @ColumnInfo
+    val question: String = "",
+    @ColumnInfo
+    val image: Int = 0,
+    @ColumnInfo
+    val optionOne: String = "",
+    @ColumnInfo
+    val optionTwo: String = "",
+    @ColumnInfo
+    val optionThree: String = "",
+    @ColumnInfo
+    val optionFour: String = "",
+    @ColumnInfo
+    val correctAnswer: Int = 0,
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo
+    var id: Int = 0,
+)

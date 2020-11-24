@@ -7,26 +7,21 @@ import androidx.room.Query
 
 @Dao public abstract interface QuestionDao {
 
-
     @Dao
-
     interface QuestionDao
 
-
     @Insert
-    fun insert (question: Question)
+    fun insert(question: Question)
 
 
     @Delete
-    fun delete (question: Question)
+    fun delete(question: Question)
 
 
     @Query("SELECT * FROM question")
-    fun getAll() : List<Question>
+    fun getAll(): List<Question>
 
 
     @Query("SELECT * FROM Question WHERE question LIKE :questionName")
-    fun findByQuestion(questionName: String) : List <Question>
-
-
+    fun findByQuestion(questionName: String): List<Question>
 }
