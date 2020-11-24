@@ -43,9 +43,76 @@ class MainActivity : AppCompatActivity() {
             "Jack russell", "Border collie",
             "Shetland sheepdog", "Whippet", 2)
 
+        val question4 = Question (
+            "What is the name of this dog breed?",
+            R.drawable.ic_cane_corso,
+            "Pitbull terrier", "Cane corso",
+            "Bullmastiff", "Amstaff", 2
+
+                )
+
+        val question5 = Question (
+            "What is the name of this dog breed?",
+            R.drawable.ic_german_shepherd,
+            "Australian shepherd", "Rottweiler",
+            "German shepherd", "Collie", 3
+
+        )
+
+        val question6 = Question (
+
+            "What is the name of this dog breed?",
+            R.drawable.ic_french_bulldog,
+            "French bulldog", "Mallinois",
+            "Boston terrier", "Staffordshire bullterrier", 1
+
+        )
+
+        val question7 = Question (
+            "What is the name of this dog breed?",
+            R.drawable.ic_tervuren,
+            "Malteser", "Weimaraner",
+            "Tervuren", "Golden retriever", 3
+
+        )
+
+        val question8 = Question (
+            "What is the name of this dog breed?",
+            R.drawable.ic_shih_tzu,
+            "Lhasa apso", "Shih-Tzu",
+            "Pekingeese", "Pomeranian", 2
+
+        )
+
+        val question9 = Question (
+
+            "What is the name of this dog breed?",
+            R.drawable.ic_rhodesian_ridgeback,
+            "Springer spaniel", "Rhodesian ridgeback",
+            "Dogo argentino", "Gran danois", 2
+
+        )
+
+        val question10 = Question (
+
+            "What is the name of this dog breed?",
+            R.drawable.ic_labrador,
+            "Labrador", "Basenji",
+            "Flat coated retriever", "Schnauzer", 1
+
+        )
+
         saveQuestion(question1)
         saveQuestion(question2)
         saveQuestion(question3)
+        saveQuestion(question4)
+        saveQuestion(question5)
+        saveQuestion(question6)
+        saveQuestion(question7)
+        saveQuestion(question8)
+        saveQuestion(question9)
+        saveQuestion(question10)
+
 
         }
         fun saveQuestion (question: Question){

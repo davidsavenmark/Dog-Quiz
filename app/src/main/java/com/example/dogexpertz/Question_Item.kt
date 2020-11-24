@@ -4,8 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-// Question class med alla nödvändiga konstanta variabler
-
+// Question class
 
 @Entity
 data class Question(
