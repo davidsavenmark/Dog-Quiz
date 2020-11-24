@@ -5,12 +5,10 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 
-interface QuestionDao {
+@Dao public abstract interface QuestionDao {
 
 
     @Dao
-
-
 
     interface QuestionDao
 

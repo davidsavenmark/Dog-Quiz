@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Question(
-    @PrimaryKey(autoGenerate = true) val id: Int,
+    @PrimaryKey(autoGenerate = true) var id: Int,
     @ColumnInfo(name = "question")val question: String,
     @ColumnInfo(name = "image")val image: Int,
     @ColumnInfo(name = "optionOne")val optionOne: String,
