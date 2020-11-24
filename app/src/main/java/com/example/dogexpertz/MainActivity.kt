@@ -27,19 +27,29 @@ class MainActivity : AppCompatActivity() {
             .fallbackToDestructiveMigration()
             .build()
 
-        val question = Question(
-            1, "What is the name of this dog breed?", R.drawable.ic_english_bulldog,
+        val question1 = Question(
+            1, "What is the name of this dog breed?",
+             R.drawable.ic_english_bulldog,
             "Chihuahua", "English Bulldog",
             "Boxer", "Mastiff",
             2)
 
-        val question = Question(
+        val question2 = Question(
             2, "What is the name of this dog breed?",
              R.drawable.ic_american_akita,
             "Bichon frisé", "Japaneese shiba",
             "American akita", "Siberian husky",3)
 
-        saveQuestion(question)
+        val question3 = Question (
+            3, "What is the name of this dog breed?",
+            R.drawable.ic_border_collie,
+            "Jack russell", "Border collie",
+            "Shetland sheepdog", "Whippet", 2)
+
+
+        saveQuestion(question1)
+        saveQuestion(question2)
+        saveQuestion(question3)
 
 
         }
