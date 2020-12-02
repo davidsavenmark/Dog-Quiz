@@ -66,7 +66,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         btn_submit.setOnClickListener(this)
 
         mCurrentPosition = 1
-        //val question: Question? = mQuestionsList!![mCurrentPosition-1]
+
     }
 
     // Funktion som sätter frågan till UI komponenten.
