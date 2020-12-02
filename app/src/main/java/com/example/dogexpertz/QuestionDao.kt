@@ -1,16 +1,13 @@
 package com.example.dogexpertz
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 
 @Dao public abstract interface QuestionDao {
 
     @Dao
     interface QuestionDao
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(question: Question)
 
 
@@ -18,10 +15,10 @@ import androidx.room.Query
     fun delete(question: Question)
 
 
-    @Query("SELECT * FROM question")
+    @Query("SELECT * FROM Questions")
     fun getAll(): List<Question>
 
 
-    @Query("SELECT * FROM Question WHERE question LIKE :questionName")
+    @Query("SELECT * FROM Questions WHERE question LIKE :questionName")
     fun findByQuestion(questionName: String): List<Question>
 }

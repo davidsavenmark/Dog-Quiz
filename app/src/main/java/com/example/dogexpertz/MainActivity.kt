@@ -3,13 +3,12 @@ package com.example.dogexpertz
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.room.Room
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,9 +22,7 @@ class MainActivity : AppCompatActivity() {
         // Justerar xml viewn till denna class
         setContentView(R.layout.activity_main)
 
-        db = Room.databaseBuilder(applicationContext, QuizDataBase::class.java, "quiz-question")
-            .fallbackToDestructiveMigration()
-            .build()
+        db = QuizDataBase.invoke(this)
 
         val question1 = Question("What is the name of this dog breed?",
              R.drawable.ic_english_bulldog,
@@ -114,10 +111,17 @@ class MainActivity : AppCompatActivity() {
         saveQuestion(question10)
 
 
+
         }
         fun saveQuestion (question: Question){
             GlobalScope.launch(Dispatchers.IO){
                 db.questionDao().insert(question)
+        }
+
+        CoroutineScope(Dispatchers.IO).async {
+            db.questionDao().getAll().forEach {
+                Log.d("!!!", it.toString())
+            }
         }
 
         // Start-Knapp

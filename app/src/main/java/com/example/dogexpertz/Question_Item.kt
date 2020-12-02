@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 
 // Question class
 
-@Entity
+@Entity(tableName = "Questions")
 data class Question(
     @ColumnInfo
     val question: String = "",

@@ -5,16 +5,20 @@ import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import com.example.dogexpertz.R.*
 import kotlinx.android.synthetic.main.activity_quiz_questions.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
 
 class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
-
+    private lateinit var db : QuizDataBase
     private var mCurrentPosition: Int = 1 // Default värde för frågepositionen.
-    private var mQuestionsList: ArrayList<Question>? = null // Default värde för storleken på
+    private var mQuestionsList: ArrayList<Question> = ArrayList() // Default värde för storleken på
                                                             // frågelistan
     private var mSelectedOptionPosition : Int = 0
     private var mCorrectAnswers: Int = 0
@@ -33,6 +37,15 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         // Används för att justera xml viewn till denna class
         setContentView(layout.activity_quiz_questions)
+        db = QuizDataBase.invoke(this)
+        CoroutineScope(Dispatchers.IO).async {
+            db.questionDao().getAll().forEach {
+                mQuestionsList.add(it)
+
+            }
+            setQuestion()
+        }
+
 
 
         // (STEG 4: Hämtar NAME från intent och tilldelar det till en variabel
@@ -42,9 +55,9 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
         // Hämtar in funktionen getQuestions som sen läser in frågan och dom fyra
         // svars-alternativen 
-        mQuestionsList = Constants.getQuestions()
+        //mQuestionsList = Constants.getQuestions()
 
-        setQuestion()
+
 
         tv_option_one.setOnClickListener(this)
         tv_option_two.setOnClickListener(this)
@@ -53,7 +66,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         btn_submit.setOnClickListener(this)
 
         mCurrentPosition = 1
-        val question: Question? = mQuestionsList!![mCurrentPosition-1]
+        //val question: Question? = mQuestionsList!![mCurrentPosition-1]
     }
 
     // Funktion som sätter frågan till UI komponenten.

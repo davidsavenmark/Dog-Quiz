@@ -13,7 +13,7 @@ object Constants {
 
 
     // Funktion som läser in frågorna och svarsalternativen från class Question.
-    fun getQuestions(): ArrayList<Question> {
+    /*fun getQuestions(): ArrayList<Question> {
         val questionsList = ArrayList<Question>()
         // Question 1
         val que1 = Question(
@@ -121,4 +121,6 @@ object Constants {
 
         return questionsList
     }
+    
+     */
 }
