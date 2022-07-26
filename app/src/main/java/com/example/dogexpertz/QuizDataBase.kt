@@ -12,7 +12,7 @@ abstract class QuizDataBase : RoomDatabase() {
 
     abstract fun questionDao() : QuestionDao
     companion object {
-        // we add volatile so that other threads gets the current changes and data
+        
         @Volatile
         private var instance: QuizDataBase? = null
         private val LOCK = Any()
