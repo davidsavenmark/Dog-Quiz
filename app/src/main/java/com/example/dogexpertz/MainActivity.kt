@@ -14,9 +14,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var db : QuizDataBase
 
-    //Denna funktion skapas automatiskt av Android när Class MainActivity är skapad.
     override fun onCreate(savedInstanceState: Bundle?) {
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN // Gömmer status bar.
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         // Kallar på parent constructorn
         super.onCreate(savedInstanceState)
         // Justerar xml viewn till denna class
@@ -98,7 +97,6 @@ class MainActivity : AppCompatActivity() {
             "Flat coated retriever", "Schnauzer", 1
 
         )
-
         saveQuestion(question1)
         saveQuestion(question2)
         saveQuestion(question3)
@@ -109,9 +107,6 @@ class MainActivity : AppCompatActivity() {
         saveQuestion(question8)
         saveQuestion(question9)
         saveQuestion(question10)
-
-
-
         }
         fun saveQuestion (question: Question){
             GlobalScope.launch(Dispatchers.IO){
@@ -123,13 +118,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d("!!!", it.toString())
             }
         }
-
-        // Start-Knapp
-        // Om namnfältet står tomt och man trycker på start så
-        // kommer det upp en påminnelse längre ner vid skärmen  " Please enter your name "
-
-        // Om namnfältet har text i sig och man trycker på start så kommer man vidare till nästa
-        // aktivitet.
+        
         btn_start.setOnClickListener () {
             if(et_name.text.toString().isEmpty()){
                 Toast.makeText(this,
@@ -137,11 +126,8 @@ class MainActivity : AppCompatActivity() {
             }else{
                 val intent = Intent(this,QuizQuestionsActivity::class.java)
 
-                // STEG 2: Passerar namnet via intent där man använder en constant variabel som
-                // finns i Constants.
-                // START
+               
                 intent.putExtra(Constants.USER_NAME,et_name.text.toString())
-                // END
                 startActivity(intent)
                 finish()
 
