@@ -16,9 +16,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
-        // Kallar på parent constructorn
+   
         super.onCreate(savedInstanceState)
-        // Justerar xml viewn till denna class
         setContentView(R.layout.activity_main)
 
         db = QuizDataBase.invoke(this)
@@ -45,7 +44,7 @@ class MainActivity : AppCompatActivity() {
             "Pitbull terrier", "Cane corso",
             "Bullmastiff", "Amstaff", 2
 
-                )
+            )
 
         val question5 = Question (
             "What is the name of this dog breed?",
